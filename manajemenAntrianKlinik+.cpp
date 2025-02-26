@@ -14,6 +14,59 @@ patient pasien[50];
 
 int inputPatient = 0;
 
+// Fungsi
+void addPatient();
+void displayPatient();
+void removePatientRecursive(int index);
+void removePatient();
+
+
+int main() {
+    int option;
+
+    do {
+        system("cls");
+        cout << "================ CLINIC QUEUE MANAGEMENT SYSTEM ================" << endl
+             << "1. Add Patient" << endl
+             << "2. Display Patient" << endl
+             << "3. Search Patient" << endl
+             << "4. Remove Patient" << endl
+             << "5. Sort Queue" << endl
+             << "6. Exit" << endl
+             << "Choose Option: ";
+        cin >> option;
+
+        switch (option) {
+            case 1:
+                system("cls");
+                addPatient();
+                system("pause");
+                break;
+            case 2: 
+                system("cls");
+                displayPatient();
+                system("pause");
+                break;
+            case 3: 
+                break;
+            case 4:
+                system("cls");
+                removePatient();
+                system("pause");
+                break;
+            case 5:
+                system("cls");
+                cout << "Exting...." << endl;
+                system("pause");
+                return 0;
+            default: 
+                system("cls");
+                cout << "Invalid choice" << endl;
+                system("pause");
+        }
+    }while (true);
+}
+
 void addPatient() {
     if (inputPatient < 50) {
         cout << "Masukan nama: ";
@@ -87,49 +140,4 @@ void removePatient() {
     if (!found) {
         cout << "Pasien tidak ditemukan." << endl;
     }
-}
-
-int main() {
-    int option;
-
-    do {
-        system("cls");
-        cout << "================ CLINIC QUEUE MANAGEMENT SYSTEM ================" << endl
-             << "1. Add Patient" << endl
-             << "2. Display Patient" << endl
-             << "3. Search Patient" << endl
-             << "4. Remove Patient" << endl
-             << "5. Sort Queue" << endl
-             << "6. Exit" << endl
-             << "Choose Option: ";
-        cin >> option;
-
-        switch (option) {
-            case 1:
-                addPatient();
-                system("pause");
-                system("cls");
-                break;
-            case 2: 
-                displayPatient();
-                system("pause");
-                system("cls");
-                break;
-            case 3: 
-                break;
-            case 4:
-                removePatient();
-                system("pause");
-                system("cls");
-                break;
-            case 5:
-                cout << "Exting...." << endl;
-                system("pause");
-                return 0;
-            default: 
-                cout << "Invalid choice" << endl;
-                system("pause");
-                system("cls");
-        }
-    }while (true);
 }
